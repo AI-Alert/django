@@ -1,18 +1,20 @@
 from rest_framework import serializers
-from .models import Article
+from .models import Article, Comment, Category
 
 class ArticleSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = Article
         fields = ('id', 'title', 'description', 'body', 'author_id')
 
-# class RubricsSerializer(serializers.ModelSerializer):
+class CommentSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Comment
+        fields = ('id', 'title', 'description', 'created')
 
-#     rubrics = ArticleSerializer(many=True, read_only=True)
-
-#     class Meta:
-#         model = Rubric
-#         fields = (
-#             "id",  # Put an Id if you want!
-#             "rubrics",
-#         )
+class CategorySerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Comment
+        fields = ('id', 'title', 'description', 'created')
