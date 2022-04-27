@@ -27,6 +27,3 @@ class Category(models.Model):
     # articles = models.ManyToManyField('articles', related_name='categories', blank=True)
     def __str__(self):
             return self.title
-
-
-
